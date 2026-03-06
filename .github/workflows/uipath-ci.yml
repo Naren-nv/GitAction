@@ -18,13 +18,16 @@ jobs:
         dotnet-version: 6.0.x
 
     - name: UiPath Pack
-      uses: UiPath/pack@v2
+      uses: uipath/uipath-action@v2
       with:
+        command: pack
         versionType: AutoVersion
+        projectPath: .
 
     - name: UiPath Deploy
-      uses: UiPath/deploy@v2
+      uses: uipath/uipath-action@v2
       with:
+        command: deploy
         orchestratorUrl: https://cloud.uipath.com/naren_wip/DefaultTenant
         tenantName: DefaultTenant
         accountName: naren_wip
